@@ -19,11 +19,11 @@ public class HomePageTest extends BaseTest {
 	
 	static Logger log = Logger.getLogger(HomePageTest.class.getName());
 	
-//	@BeforeClass
-//	public void beforeClass()
-//	{
-//		 homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-//	}
+	@BeforeClass
+	public void beforeClass()
+	{
+		 homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+	}
 	
 	@Test
 	public void verifyUserName()

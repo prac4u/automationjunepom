@@ -28,6 +28,7 @@ public class LoginPageTest extends BaseTest{
 	@Test(priority = 2)
 	public void usernamePresence()
 	{
+		
 		boolean actual = loginPage.isUsernamePresent();
 		Assert.assertEquals(actual, true);
 	}

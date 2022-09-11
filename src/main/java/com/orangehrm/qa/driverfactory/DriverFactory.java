@@ -8,8 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
-	
-	static ThreadLocal<WebDriver> tldriver = new ThreadLocal<WebDriver>();
 	WebDriver driver;
 	
 	public WebDriver init_driver()
@@ -20,8 +18,7 @@ public class DriverFactory {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
-		tldriver.set(driver);
-		return tldriver.get();
+		return driver;
 		
 	}
 	
@@ -30,7 +27,7 @@ public class DriverFactory {
 	public WebDriver getDriver()
 	{
 		
-		return tldriver.get();
+		return driver;
 	}
 
 }

@@ -32,28 +32,25 @@ public class BaseTest {
 	public void setup() throws IOException
 	{
 		prop = PropConfig.loadProperties("ST");
-	
-		
-	}
-	
-	@BeforeMethod
-	public void beforeMethod()
-	{
 		df = new DriverFactory();
 		driver = df.init_driver();
 		log.info("Driver file is initiliazed");
 		driver.get(prop.getProperty("baseurl"));
 		log.info("Url opened: " + prop.getProperty("baseurl"));
 		loginPage = new LoginPage(driver);
-		 homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		
+		
+	
 		
 	}
+	
+	
 	
 
 	@AfterTest
 	public void teardown()
 	{
-		
+		driver.quit();
 	}
 	
 	
@@ -69,7 +66,7 @@ public class BaseTest {
 			ScreenshotUtil.takeScreenshot(driver, screenshotName);
 			
 		}
-		driver.quit();
+		
 	}
 
 }
