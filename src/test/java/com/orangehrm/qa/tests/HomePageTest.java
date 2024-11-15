@@ -33,6 +33,13 @@ public class HomePageTest extends BaseTest {
 		Assert.assertEquals(actualUsername, Constants.HOME_PAGE_USERNAME);
 	}
 
+
+	@Test
+	public void test()
+	{
+		System.out.println("Test");
+	}
+
 	
 	@Test
 	public void verifyMenuItems()
